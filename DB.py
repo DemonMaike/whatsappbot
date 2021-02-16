@@ -16,9 +16,15 @@ def name(dt):
 
     return ', '.join(end)
 
+def updatedb():
+    conn = sqlite3.connect('database.db')
+    cur = conn.cursor()
+    Named = input()
+    dated = input()
+    result = cur.execute('INSERT INTO Human(Name, date) VALUES ({})'.format(f'Named, dated'))
+    conn.commit()
 
-
-
+updatedb()    
 
 # create table
 # cur.execute("""CREATE TABLE Human (Name text, date text)""")
