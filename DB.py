@@ -4,11 +4,11 @@ import sqlite3
 #cur = conn.cursor()
 
 # select name birthday man's 
+conn = sqlite3.connect('database.db')
+cur = conn.cursor()
 
 def name(dt):
     '''This function return name birthday man's, need write a date'''
-    conn = sqlite3.connect('database.db')
-    cur = conn.cursor()
     end = []
     result = [x for x in cur.execute('SELECT Name FROM Human WHERE date = "{}"'.format(dt))]
     for x in result:
@@ -17,14 +17,13 @@ def name(dt):
     return ', '.join(end)
 
 def updatedb():
-    conn = sqlite3.connect('database.db')
-    cur = conn.cursor()
-    Named = input()
+    named = input()
     dated = input()
-    result = cur.execute('INSERT INTO Human(Name, date) VALUES ({})'.format(f'Named, dated'))
+    #problems, need a think of option's .format
+    result = cur.execute('INSERT INTO Human(Name, date) VALUES ({},{})'.format(named, dated))
     conn.commit()
 
-updatedb()    
+updatedb()   
 
 # create table
 # cur.execute("""CREATE TABLE Human (Name text, date text)""")
@@ -33,8 +32,8 @@ updatedb()
 # Human = [('Первый', '2, 13'), ('Второй', '2, 13'), ('Третий', '2, 13')]
 
 # delete information
-# cur.execute("DELETE FROM Human WHERE Date = '2 13'" )
-# con.commit()
+#cur.execute("DELETE FROM Human WHERE Date = '1'" )
+#conn.commit()
 
 # Update data from database
 #cur.execute('UPDATE Human SET date = "2, 15" WHERE date = "2, 13" ')
