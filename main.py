@@ -14,4 +14,3 @@ data = {"chatid":secret.idchat, "message":f"{DB.name(dt)} c Днем рожде�
 request = requests.post(secret.apiurl, json=data)
 print(request)
 print(secret.apiurl)
-
