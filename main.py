@@ -3,13 +3,13 @@ import DB
 from datetime import datetime
 import secret
 
+# non stop loop
 while True:
-
     # detected the date today
     d = datetime.today()
     time = datetime.now().time()
-    print(str(time)[0:8])
-    if str(time)[0:8] == '12:25:00':
+    # start def in idicated time
+    if str(time)[0:8] == '9:00:00': 
         dt = f'{d.month}, {d.day}'
 
         data = {"chatid":secret.idchat, "message":f"{DB.name(dt)} c Днем рождения!"}
@@ -19,4 +19,5 @@ while True:
         print(request)
         print(secret.apiurl)
         time.sleep(3)
+    
     
