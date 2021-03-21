@@ -9,7 +9,7 @@ while True:
     d = datetime.today()
     time = datetime.now().time()
     # start def in idicated time
-    if str(time)[0:5] == '20:15': 
+    if str(time)[:5] == '20:15': 
         dt = f'{d.month}, {d.day}'
 
         data = {"chatid":secret.idchat, "message":f"{DB.name(dt)} c Днем рождения!"}
