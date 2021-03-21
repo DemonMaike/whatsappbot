@@ -16,6 +16,12 @@ def name(dt):
 
     return ', '.join(end)
 
+def get_all():
+    with sqlite3.connect('database.db') as conn:
+        sql = 'SELECT * FROM Human'
+        data = conn.execute(sql).fetchall()
+    return data
+
 
 
 
