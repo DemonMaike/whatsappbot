@@ -6,11 +6,14 @@ import secret
 # non stop loop
 while True:
     # detected the date today
-    d = datetime.today()
-    time = datetime.now().time()
+    now = datetime.now()
+    date_mounth = now.strftime('%m')
+    date_day = now.strftime('%d')
+    time = now.strftime('%H%M')
+    print (time)
     # start def in idicated time
-    if str(time)[0:5] == '20:15': 
-        dt = f'{d.month}, {d.day}'
+    if time == '20:15': 
+        dt = f'{date_mounth}, {date_day}'
 
         data = {"chatid":secret.idchat, "message":f"{DB.name(dt)} c Днем рождения!"}
 
