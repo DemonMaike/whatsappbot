@@ -1,25 +1,22 @@
 import requests
-import DB
+from data import name
 from datetime import datetime
 import secret
 
 # non stop loop
 while True:
-    # detected the date today
+    # detecting a date and time now
     now = datetime.now()
-    date_mounth = now.strftime('%m')
-    date_day = now.strftime('%d')
-    time = now.strftime('%H%M')
-    print (time)
-    # start def in idicated time
-    if time == '20:15': 
-        dt = f'{date_mounth}, {date_day}'
+    time = now.strftime('%H:%M')
+    date_now = now.strftime('%m-%d')
 
-        data = {"chatid":secret.idchat, "message":f"{DB.name(dt)} c Днем рождения!"}
+    # writeing a congretulation message in what's app in need time
+    if time == '09:00': 
 
-        #request for What's app API, url from green-api
+        data = {"chatid":secret.idchat, "message":f"{name(date_now)} c Днем рождения!"}
+
+        #request for What's app API, url make from green-api
         request = requests.post(secret.apiurl, json=data)
+
         print(request)
-        print(secret.apiurl)
-        time.sleep(3)
-    
+        break
