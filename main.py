@@ -9,9 +9,9 @@ while True:
     now = datetime.now()
     time = now.strftime('%H:%M')
     date_now = now.strftime('%m-%d')
-
+    print(date_now)
     # writeing a congretulation message in what's app in need time
-    if time == '09:00': 
+    if time == '01:18': 
 
         data = {"chatid":secret.idchat, "message":f"{name(date_now)} c Днем рождения!"}
 

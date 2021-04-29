@@ -18,15 +18,14 @@ print("Database opened successfully")
 def name(date_today):
     names = ''
     cur = con.cursor()
-    cur.execute(f"SELECT * FROM users WHERE to_char(date, 'YYYY-MM-DD') LIKE '%{date_today}' ")
+    cur.execute(f"SELECT * FROM users WHERE to_char(date, 'MM-DD') LIKE '{date_today}' ")
     rows = cur.fetchall()
     for row in rows:
-        names += row[2]
+        names += row[2] # row2 it's lust_name from database.
         names += ','
     return names 
 
 
-print(name('04-24'))
 
 
 
