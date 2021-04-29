@@ -12,6 +12,7 @@ while True:
     print(date_now)
     # writeing a congretulation message in what's app in need time
     if time == '01:18': 
+        
 
         data = {"chatid":secret.idchat, "message":f"{name(date_now)} c Днем рождения!"}
 

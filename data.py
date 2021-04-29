@@ -17,6 +17,7 @@ print("Database opened successfully")
 # creating mimi-function for search in database on date today
 def name(date_today):
     names = ''
+    
     cur = con.cursor()
     cur.execute(f"SELECT * FROM users WHERE to_char(date, 'MM-DD') LIKE '{date_today}' ")
     rows = cur.fetchall()
