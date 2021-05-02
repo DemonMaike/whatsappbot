@@ -10,7 +10,6 @@ while True:
     now = datetime.now()
     time = now.strftime('%H:%M')
     date_now = now.strftime('%m-%d')
-    print(date_now)
     # writeing a congretulation message in what's app in need time
     if time == '09:00' or os.getenv("TEST") == "TEST": 
 
@@ -18,6 +17,3 @@ while True:
 
         #request for What's app API, url make from green-api
         request = requests.post(secret.apiurl, json=data)
-
-        print(request)
-        break
