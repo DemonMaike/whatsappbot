@@ -1,3 +1,3 @@
 import os
 
-os.getenviron("TEST")="UNDEF"
+os.environ["TEST"]="UNDEF"
