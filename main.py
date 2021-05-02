@@ -17,4 +17,4 @@ while True:
         print("Is worked" , data)
         #request for What's app API, url make from green-api
         request = requests.post(secret.apiurl, json=data)
-        sleep(86000)
+    sleep(60)
