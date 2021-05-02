@@ -1,4 +1,5 @@
 import requests
+from time import sleep
 from data import name
 from datetime import datetime
 import os
@@ -16,4 +17,4 @@ while True:
         print("Is worked" , data)
         #request for What's app API, url make from green-api
         request = requests.post(secret.apiurl, json=data)
-        break
+        sleep(86000)
