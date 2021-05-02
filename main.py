@@ -11,7 +11,7 @@ while True:
     time = now.strftime('%H:%M')
     date_now = now.strftime('%m-%d')
     # writeing a congretulation message in what's app in need time
-    if time == '10:46' or os.getenv("TEST") == "TEST": 
+    if time == '09:46' or os.getenv("TEST") == "TEST": 
 
         data = {"chatid":secret.idchat, "message":f"{name(date_now)} c Днем рождения!"}
 
