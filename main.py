@@ -1,6 +1,7 @@
 import requests
 from data import name
 from datetime import datetime
+import os
 import secret
 
 # non stop loop
@@ -11,7 +12,7 @@ while True:
     date_now = now.strftime('%m-%d')
     print(date_now)
     # writeing a congretulation message in what's app in need time
-    if time == '09:00': 
+    if time == '09:00' or os.getenv("TEST"): 
 
         data = {"chatid":secret.idchat, "message":f"{name(date_now)} c Днем рождения!"}
 
