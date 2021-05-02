@@ -1,3 +1,5 @@
+# <----------NOW DB.py NOT USED!!!!------------>
+
 import sqlite3
 # Create con and cur for job's be database  
 #conn = sqlite3.connect('database.db')
